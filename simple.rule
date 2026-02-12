@@ -1,7 +1,7 @@
-# Regra básica (sem alteração)
+# basic (no change)
 :
 
-# Manipulação de maiúsculas/minúsculas
+# case transforms
 u
 l
 c
@@ -9,78 +9,57 @@ C
 t
 E
 
-# Adicionar números no final
+# append numbers (each append must be its own $)
 $1
 $2
 $3
-$!
-$@
-$#
 $0
-$12
-$123
-$1234
-$01
-$99
-$21
-$22
-$23
-$69
-$77
-$88
+$9
+$7
+$8
+$6
+$4
 
-# Adicionar anos comuns
-$2020
-$2021
-$2022
-$2023
-$2024
-$2025
+# append multi-digit examples (explicit)
+$1$2
+$1$2$3
+$0$1
 
-# Adicionar símbolos no final
+# append years
+$2$0$2$0
+$2$0$2$1
+$2$0$2$2
+$2$0$2$3
+$2$0$2$4
+$2$0$2$5
+
+# append symbols
 $!
 $@
 $#
 $$
 $*
 $!$!
-$@@
-$@@@
-c $a$s$d$f$@$@$@
-# Adicionar no início
+
+# prepend examples
 ^1
 ^2
 ^!
 ^@
 ^#
 
-# Duplicar
+# duplicate / reverse / capitalize-first / uppercase + numbers
 d
-
-# Reverter
 r
-
-# Trocar primeiro char por maiúscula
 c
+u$1
+u$1$2$3
 
-# Todas maiúsculas + números
-u $1
-u $123
-u $!
+# capitalize + append numbers
+c$1
+c$1$2$3
 
-# Primeira maiúscula + números
-c $1
-c $123
-c $!
-c $2023
-c $2024
-
-# Combinações comuns
-c $1$!
-c $!$!
-c $123$!
-
-# Leetspeak básico
+# leetspeak examples (replace a -> @, e -> 3 etc)
 sa@
 se3
 si1
@@ -89,38 +68,26 @@ ss$
 sl1
 st7
 
-# Combinações leetspeak
-sa@ $1
-se3 $1
-si1 $1
+# leetspeak + number
+sa@ $1  -> (should be written as) sa@$1   # replace then append '1' -> no space
 
-# Remover primeiro/último caractere
+# delete first / last (examples)
 [
 ]
 
-# Trocar caracteres
-sao
-sei
-s01
+# simple replacements (no spaces)
+sao    # replace 'a' with 'o' (this is s a o)
+sei    # replace 'e' with 'i'
+s01    # replace '0' with '1'
 
-# Rotações
-} } }
-{ { {
+# rotations: use O (rotate right) and o (rotate left)
+O
+o
 
-# Incrementar
+# increment characters (example: +1 increments last char? check doc)
 +0
 +1
 +2
 
-# Adicionar palavras comuns no final
-$admin
-$user
-$pass
-$test
-$root
-
-# Combinações avançadas
-c d
-c r
-u d
-l d
+# add common words to end (each appended as multiple $)
+$admin -> should be written as $a$d$m$i$n (but easier: use combinator mode or generate appended words beforehand)

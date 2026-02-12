@@ -32,7 +32,7 @@
         aircrack-ng
         #metasploit
         #maltego
-        audiness
+        #audiness
         apk-tools
         snort
       ];
